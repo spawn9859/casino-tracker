@@ -1,0 +1,45 @@
+.sort-controls {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    /* Allow scrolling if screen is very narrow */
+    padding-bottom: 2px;
+    /* Scrollbar spacing if visible */
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+}
+
+.sort-controls::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Saf */
+}
+
+.sort-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.5rem;
+    /* Larger touch target */
+    min-height: 40px;
+    white-space: nowrap;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    border: 1px solid transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.sort-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+}
+
+.sort-btn.active {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+    color: var(--neon-blue);
+}

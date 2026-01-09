@@ -1,0 +1,125 @@
+.app-container {
+  min-height: 100vh;
+  padding: 0;
+  /* Remove default padding for edge-to-edge on mobile */
+  background: radial-gradient(circle at top center, rgba(168, 85, 247, 0.1), transparent 40%);
+}
+
+.content-width {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  /* Add padding here for content breathing room */
+  padding-bottom: 80px;
+  /* Safe area for bottom scrolling */
+}
+
+/* Sticky Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  padding-top: max(1rem, env(safe-area-inset-top));
+  /* Safe area for specific devices */
+  margin-top: 0;
+  /* Clear margin */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(9, 9, 11, 0.95);
+  /* Slightly more opaque for status bar overlap */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin: 0 -1rem 1rem -1rem;
+  /* Negative margin to span full width */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.header-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  background: rgba(251, 191, 36, 0.1);
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.app-header h1 {
+  font-size: 1.25rem;
+  /* Slightly smaller for mobile safety */
+  margin: 0;
+  background: linear-gradient(to right, #fff, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: none;
+  /* Hide subtitle on small mobile to save space, or keep custom */
+}
+
+@media (min-width: 400px) {
+  .subtitle {
+    display: block;
+  }
+}
+
+.primary-action {
+  background: var(--neon-purple) !important;
+  border-color: var(--neon-purple) !important;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  /* Larger touch target area visual */
+  min-height: 40px;
+  /* Touch target */
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.toolbar {
+  margin-bottom: 1.5rem;
+  position: sticky;
+  top: 73px;
+  /* Height of header approx */
+  z-index: 40;
+  /* Below header */
+  background: rgba(9, 9, 11, 0.9);
+  /* Opaque background to hide scroll content */
+  backdrop-filter: blur(12px);
+  padding: 0.5rem 0;
+  margin: 0 -1rem 1.5rem -1rem;
+  /* Full span */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.casino-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+}
